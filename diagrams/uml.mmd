@@ -1,15 +1,54 @@
 classDiagram
-    %% Replace the placeholders below with your actual classes, attributes, methods, and relationships.
-    %% Keep this file updated so it matches your final implementation.
-
-    class ClassName {
-        +type attribute
-        +method() returnType
+    class Pet {
+        +String name
+        +String species
+        +int age
+        +float weight
+        +String activityLevel
+        +List~String~ medicalNeeds
+        +displayProfile() String
+        +updateInfo() void
+        +getCareRequirements() List~String~
     }
 
-    class AnotherClass {
-        +type attribute
-        +method() returnType
+    class CareTask {
+        +String taskName
+        +String type
+        +String priority
+        +int duration
+        +String frequency
+        +DateTime dueTime
+        +boolean completed
+        +markComplete() void
+        +markIncomplete() void
+        +isOverdue() boolean
+        +updateTask() void
+        +Pet pet
     }
 
-    ClassName --> AnotherClass : relationship
+    class OwnerPreferences {
+        +int availableTime
+        +List<String> busyHours
+        +List~Time~ preferredTaskTimes
+        +int dailyTimeLimit
+        +List~String~ taskPreferences
+        +updateAvailability() void
+        +updatePreferences() void
+        +isAvailable(time: DateTime) boolean
+    }
+
+    class PetCareAssistant {
+        +List~Pet~ pets
+        +List~CareTask~ tasks
+        +OwnerPreferences ownerPreferences
+        +List~CareTask~ dailyPlan
+        +generateDailyPlan() List~CareTask~
+        +prioritizeTasks() List~CareTask~
+        +explainPlan() String
+        +rescheduleTasks() void
+    }
+
+    Pet "1" --> "*" CareTask : has
+    PetCareAssistant "1" --> "*" Pet : manages
+    PetCareAssistant "1" --> "*" CareTask : schedules
+    PetCareAssistant "1" --> "1" OwnerPreferences : uses

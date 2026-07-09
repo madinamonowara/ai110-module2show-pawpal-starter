@@ -5,7 +5,39 @@
 **a. Initial design**
 
 - Briefly describe your initial UML design.
+3 core actions:
+- add/manage pet care tasks 
+- update todays contraints (only have 30 min this evening)
+- generate daily plans
+
 - What classes did you include, and what responsibilities did you assign to each?
+
+The 4 classes:
+
+Class 1: Pet
+Class 1 Attributes: 
+    name, species, age, weight, activityLevel, medicalNeeds
+Class 1 Methods:    
+    displayProfile(), updateInfo(), getCareRequirements()
+
+Class 2: CareTask
+Class 2 Attributes:
+    taskName, type (feeding, walk, meds, grooming), priority, duration, frequency, dueTime, completed
+Class 2 Methods:
+    markComplete(), markIncomplete(), isOverdue(), updateTask()
+
+Class 3: OwnerPreferences
+Class 3: Attributes: 
+    availableTime, busyHours, preferredTaskTimes, dailyTimeLimit, taskPreferences
+Class 3: Methods:
+    updateAvailability(), updatePreferences(), isAvailable(time)
+
+Class 4: PetCareAssistant
+Class 4: Attributes: 
+    pets, tasks, ownerPreferences, dailyPlan
+Class 4: Methods:
+    generateDailyPlan(), prioritizeTasks(), explainPlan(), rescheduleTasks()
+
 
 **b. Design changes**
 
