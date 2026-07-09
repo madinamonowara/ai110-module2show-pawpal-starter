@@ -77,7 +77,7 @@ Today's Schedule for Alex
   [ ] 18:30  Biscuit: Evening play (medium, daily)
   [ ] 19:00  Mochi: Litter cleaning (medium, daily)
 
-  
+
 ## 📐 Smarter Scheduling
 
 > Fill in once you've implemented scheduling logic.
@@ -88,6 +88,15 @@ Today's Schedule for Alex
 | Filtering | | e.g., skip tasks if time runs out |
 | Conflict handling | | e.g., overlapping time slots |
 | Recurring tasks | | e.g., daily vs. weekly |
+
+## 📐 Smarter Scheduling
+
+| Feature | Method(s) | Notes |
+|---------|-----------|-------|
+| Task sorting | `Scheduler.sort_by_time()` | Orders tasks by date, then start time (earliest first) via `sorted()` with a lambda key. |
+| Filtering | `Scheduler.filter_by_pet()`, `Scheduler.filter_by_status()` | Narrow to one pet, or to only pending / only completed tasks. |
+| Conflict handling | `Scheduler.conflict_warnings()`, `Scheduler.resolve_conflicts()`, `Task.overlaps()` | Detects overlapping time ranges (start + duration, not just equal start times); can auto-shift the lower-priority task to the next free slot. |
+| Recurring tasks | `Task.next_occurrence()`, `Pet.complete_task()` | Completing a daily/weekly task auto-generates the next occurrence for a later date via `timedelta`. |
 
 ## 📸 Demo Walkthrough
 

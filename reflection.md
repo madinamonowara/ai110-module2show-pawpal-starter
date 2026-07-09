@@ -61,6 +61,11 @@ Yes, took scheduler out from PetCareAssistant so the scheduling algorithm is tes
 - Describe one tradeoff your scheduler makes.
 - Why is that tradeoff reasonable for this scenario?
 
+The scheduler detects overlapping tasks and auto-resolves them by shifting the lower-priority task to the next open slot, and reporting each move rather than reordering silently. 
+
+The tradeoff: right now the system isnt able to honor "must happen by" deadlines. To keep the logic more simpler I thought this was fine since these tasks would most likely get labled higher prioirty anyways, but this would be a natural next step. 
+
+
 ---
 
 ## 3. AI Collaboration
