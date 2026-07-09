@@ -66,10 +66,18 @@ pytest --cov
 
 Sample test output:
 
-```
-# Paste your pytest output here
-```
+madinamonowara@MacBookAir ai110-module2show-pawpal-starter % python3 main.
+py
+Today's Schedule for Alex
+========================================
+  [x] 08:00  Biscuit: Morning walk (high, daily)
+  [ ] 08:30  Mochi: Feeding (high, daily)
+  [ ] 09:00  Biscuit: Feeding (high, daily)
+  [ ] 09:00  Mochi: Flea meds (high, weekly)
+  [ ] 18:30  Biscuit: Evening play (medium, daily)
+  [ ] 19:00  Mochi: Litter cleaning (medium, daily)
 
+  
 ## 📐 Smarter Scheduling
 
 > Fill in once you've implemented scheduling logic.

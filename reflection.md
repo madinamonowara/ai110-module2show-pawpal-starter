@@ -44,6 +44,9 @@ Class 4: Methods:
 - Did your design change during implementation?
 - If yes, describe at least one change and why you made it.
 
+Yes, took scheduler out from PetCareAssistant so the scheduling algorithm is testable on a plain list of tasks.
+
+
 ---
 
 ## 2. Scheduling Logic and Tradeoffs
